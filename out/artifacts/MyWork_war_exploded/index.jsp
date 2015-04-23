@@ -12,5 +12,7 @@
   </head>
   <body>
     <h4>Hello idea</h4>
+    <hr/>
+    <a href="test/departmentAction!getData">点击获取部门数据</a>
   </body>
 </html>

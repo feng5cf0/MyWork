@@ -5,26 +5,12 @@
 
 <struts>
 
-    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
     <constant name="struts.devMode" value="true" />
 
-    <package name="default" namespace="/" extends="struts-default">
-
-        <default-action-ref name="index" />
-
-        <global-results>
-            <result name="error">/WEB-INF/jsp/error.jsp</result>
-        </global-results>
-
-        <global-exception-mappings>
-            <exception-mapping exception="java.lang.Exception" result="error"/>
-        </global-exception-mappings>
-
-        <action name="index">
-            <result type="redirectAction">
-                <param name="actionName">HelloWorld</param>
-                <param name="namespace">/example</param>
-            </result>
+    <package name="default" namespace="/test" extends="struts-default">
+        <action name="departmentAction" class="departmentAction">
+            <result name="getData">/department_result.jsp</result>
         </action>
     </package>
 
