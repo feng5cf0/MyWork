@@ -1,8 +1,11 @@
 package com.test.model;
 
+import javax.persistence.*;
+
 /**
  * Created by Administrator on 2015/4/21 0021.
  */
+
 public class Department extends BaseModel{
 
     private String deptId;
