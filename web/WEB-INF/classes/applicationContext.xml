@@ -11,6 +11,15 @@
 
     <bean id="department" class="com.test.model.Department" scope="prototype"></bean>
 
+    <bean id="baseDao" class="com.test.dao.impl.BaseDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+    <bean id="departmentDao" class="com.test.dao.impl.DepartmentDao" parent="baseDao">
+    </bean>
+
+    <bean id="departmentAction" class="com.test.action.DepartmentAction" scope="prototype" autowire="byName"/>
+
     <!--配置数据源-->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
@@ -32,13 +41,6 @@
             <value>classpath:hibernate.cfg.xml</value>
         </property>
     </bean>-->
-
-    <bean id="baseDao" class="com.test.dao.impl.BaseDaoImpl">
-        <property name="sessionFactory" ref="sessionFactory"></property>
-    </bean>
-    <bean id="departmentDao" class="com.test.dao.impl.DepartmentDao" parent="baseDao">
-    </bean>
-    <bean id="departmentAction" class="com.test.action.DepartmentAction" scope="prototype" autowire="byName"/>
 
     <!--事务配置-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
