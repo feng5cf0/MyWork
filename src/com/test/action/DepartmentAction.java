@@ -4,7 +4,10 @@ import com.test.dao.IBaseDao;
 import com.test.dao.impl.BaseDaoImpl;
 import com.test.dao.impl.DepartmentDao;
 import com.test.model.Department;
+import com.test.service.IDepartmentService;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 /**
@@ -12,24 +15,35 @@ import java.util.List;
  */
 public class DepartmentAction extends BaseAction {
 
-    private IBaseDao<Department,String> departmentDao;
+    private IDepartmentService departmentService;
    // private IBaseDao baseDao;
 
-    public String getData(){
+    /**
+     * 向页面传输数据，json格式。
+     * @return
+     */
+    public String getDataForPage(){
 
-        System.out.println("==============================ok");
-        //List<Department> list = this.departmentDao.getAll();
-        Department dept = new Department();
-        dept.setDeptId("wow");
-        dept.setDeptName("heh");
-        dept.setManagerId("mang");
-       //this.departmentDao.Save(dept);
-        this.departmentDao.save(dept);
+        String resultStr = null;
 
-        return "getData";
+        resultStr = "{\"CustomerID\":\"abc123\",\"CompanyName\":\"zoe\",\"ContactName\":\"mgz\",\"City\":\"xm\"}";
+        System.out.println(resultStr);
+        String jsonStr = "{\"Rows\":[{\"CustomerID\":\"abc123\",\"CompanyName\":\"zoe\",\"ContactName\":\"mgz\",\"City\":\"xm\"}],\"Total\":1}";
+        System.out.println(jsonStr);
+        PrintWriter out = null;
+        try {
+            out = getRespose().getWriter();
+            out.write(jsonStr);
+
+            out.flush();
+            out.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
-    public void setDepartmentDao(IBaseDao<Department, String> departmentDao) {
-        this.departmentDao = departmentDao;
+    public void setDepartmentService(IDepartmentService departmentService) {
+        this.departmentService = departmentService;
     }
 }
