@@ -32,7 +32,7 @@ public class DepartmentAction extends BaseAction {
         System.out.println(jsonStr);
         PrintWriter out = null;
         try {
-            out = getRespose().getWriter();
+            out = getResponse().getWriter();
             out.write(jsonStr);
 
             out.flush();

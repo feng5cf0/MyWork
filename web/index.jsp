@@ -16,5 +16,7 @@
     <a href="test/departmentAction!getData">点击获取部门数据</a>
     <hr/>
     <a href="ligerJsp/textBox.jsp">ligerUI</a>
+    <hr/>
+    <a href="jsp/zTreeTest.jsp">树zTree</a>
   </body>
 </html>

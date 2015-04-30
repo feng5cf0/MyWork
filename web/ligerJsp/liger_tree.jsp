@@ -34,13 +34,8 @@
                 checkbox:true,
                 idFieldName: 'id',
                 delay: [1,2],//1级和2级都延迟
-                slide: false,
-                onAfterAppend: function ()
-                {
-                },
-                onBeforeAppend: function ()
-                {
-                }
+                //是否显示展开树时的动画
+                slide: false
             });
 
             showNodesCountMessage();

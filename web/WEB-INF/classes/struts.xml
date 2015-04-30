@@ -12,6 +12,7 @@
         <action name="departmentAction" class="departmentAction">
             <result name="getData">/department_result.jsp</result>
         </action>
+        <action name="ztreeAction" class="ztreeAction"></action>
     </package>
 
     <include file="example.xml"/>

@@ -19,7 +19,7 @@
     </bean>
 
     <bean id="departmentAction" class="com.test.action.DepartmentAction" scope="prototype" autowire="byName"/>
-
+    <bean id="ztreeAction" class="com.test.action.ZTreeAction" scope="prototype"/>
     <!--配置数据源-->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>

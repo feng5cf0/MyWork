@@ -22,7 +22,7 @@ public class BaseAction extends ActionSupport{
         return ServletActionContext.getRequest();
     }
 
-    public HttpServletResponse getRespose(){
+    public HttpServletResponse getResponse(){
         return ServletActionContext.getResponse();
     }
 
